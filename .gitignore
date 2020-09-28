@@ -1,4 +1,16 @@
+## Custom Rules
+data/*
+!data/.gitkeep 
+
+
+## R related
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+
+## Windows related
+
+
+## Mac related

@@ -1,0 +1,54 @@
+# https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#site-configuration
+
+name: "twitter-edu"
+lib_dir: "../docs/site_libs"
+output_dir: "../docs"
+
+## What export to /docs
+# include: ["assets/"]
+# exclude: ["docs.txt", "*.csv"]
+
+navbar:
+  title: "Twitter Deutschland"
+  type: inverse
+  left:
+    - text: "About"
+      icon: fa-info
+      href: index.html
+    - text: "Data"
+      icon: fas fa-database
+      href: descriptives.html
+    - text: "Analyses"
+      icon: fas fa-chart-line
+      menu:
+        - text: "Reports"
+        - text: "GeoData"
+          href: geodata.html
+        - text: "Sentiment Analysis"
+          href: sentiment.html
+        - text: "---------"
+        - text: "Models"
+        - text: "User Classification"
+          href: user-classification.html
+    - text: "Drake Graph"
+      icon: fas fa-project-diagram
+      href: drake_vis_graph.html
+    - text: "Dependencies"
+      icon: fas fa-check-circle
+      href: dependencies.html
+
+  right:
+    - icon: fa fa-github
+      href: "https://github.com/kleinlennart/twitter-edu"
+      
+output:
+  html_document:
+    # theme: "cosmo"
+    highlight: "tango"
+    css: "assets/style.css"
+    include:
+      in_header: "assets/header.html"
+      before_body: "assets/title.html"
+      after_body: "assets/footer.html"
+      
+    

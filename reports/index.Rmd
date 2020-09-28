@@ -1,0 +1,30 @@
+---
+title: "Welcome to Twitter Edu!"
+date: "`r stringr::str_c('Updated ', format(Sys.time(), '%d. %B, %Y'))`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Authors
+
+**Christian Fischer**
+University of Tübingen, Germany
+christian.fischer@uni-tuebingen.de
+
+**Fitore Morina**
+University of Tübingen, Germany
+fitore.morina@uni-tuebingen.de
+
+**Conrad Borchers**
+University of Tübingen, Germany
+conrad.borchers@student.uni-tuebingen.de
+
+**Lennart Klein**
+University of Tübingen, Germany
+lennart.klein@student.uni-tuebingen.de
+
+# Pages
+
+[GEO](/geodata.html)
