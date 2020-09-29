@@ -1,20 +1,22 @@
 # https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html#site-configuration
 
 name: "twitter-edu"
-lib_dir: "../docs/site_libs"
+lib_dir: "../docs/site_libs" # where to save libs
 output_dir: "../docs"
+
+# "`r drake::file_out('../docs')`"
 
 ## What export to /docs
 # include: ["assets/"]
 # exclude: ["docs.txt", "*.csv"]
 
 navbar:
-  title: "Twitter Deutschland"
+  title: "Drake Boilerplate"
   type: inverse
   left:
     - text: "About"
       icon: fa-info
-      href: index.html
+      href: dataset.html
     - text: "Data"
       icon: fas fa-database
       href: descriptives.html

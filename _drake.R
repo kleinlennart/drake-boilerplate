@@ -5,7 +5,7 @@ lapply(list.files("./R", full.names = TRUE), source)
 drake_config(
   plan,
   targets = NULL,             # specify targets
-  verbose = 2L,               # show progress bar
+  verbose = 1L,               # show progress bar (1L seems most useful)
   jobs = 1L,                  # allow n parallel jobs
   jobs_preprocess = 1L,
   retries = 0,                # optionally allow n retries

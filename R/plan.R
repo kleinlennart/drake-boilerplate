@@ -1,30 +1,28 @@
+# also exclude files with underscore
+
+# https://rdrr.io/github/webbedfeet/coursedown/src/inst/templates/_drake.R
+
+
+# pages_paths <- fs::dir_ls("reports/", glob = "*.Rmd")
+
+pages_paths <- dir("reports", pattern = "*.Rmd", full.names = TRUE)
+
+# pages_paths <- c("reports/analysis.Rmd", "reports/dataset.Rmd",
+#                 "reports/dependencies.Rmd", "reports/descriptives.Rmd",
+#                 "reports/index.Rmd")
 plan <- drake_plan(
-  imported_data = get_data(),
 
-  tidy_data = FUN(imported_data),
-
-  transformed_data = FUN(tidy_data),
-
-  model_data = FUN(transformed_data),
-
-
-  make_visuals = FUN(model_data, ), # use dynamic subtarget for all plots
-
-
-  report = rmarkdown::render(
-    knitr_in("reports/Test.Rmd"),
-    output_file = file_out("../docs/Test.html"),
-    quiet = TRUE
-  ),
-
-  render_site = rmarkdown::render_site(
-    input = file_in("reports/"),
-    quiet = FALSE
-      
-      ),
-
-
-  final_data = FUN,
-
-  export_data = saveRDS(final_data, file_out("data/output/final_data.rds"))
+  # TODO: Trigger dependency on _site.yml
+  # TODO: exclude _file.Rmd with regex in dir
+  render_pages = target(
+    command = rmarkdown::render(
+      knitr_in(rmd_files),
+      output_dir = file_out("docs/"),
+      quiet = TRUE
+    ),
+    transform = map(rmd_files = !!pages_paths) # the `!!` does it all but I don't know how and why
+  )
 )
+
+# plot(plan)
+# vis_drake_graph(plan)

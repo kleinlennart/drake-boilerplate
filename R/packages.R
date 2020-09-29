@@ -8,12 +8,14 @@ library(conflicted) # better conflict errors
 # library(dotenv) # loads the variables defined in the .env file
 
 ## Data Wrangling
+# suppressPackageStartupMessages(library(tidyverse))
 library(tidyverse)
 library(lubridate)
 
 ## Reporting
 library(knitr)
 library(rmarkdown)
+library(kableExtra)
 
 ## Others
 # library(visNetwork)

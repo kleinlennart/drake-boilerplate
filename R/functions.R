@@ -1,3 +1,10 @@
+print_full_width <- function(data) {
+  kable(data) %>% kable_styling("striped",
+                                full_width = TRUE
+  )
+}
+
+
 join_subdata = function(sentiment_data, 
                         reply_data,
                         uclass_data,
