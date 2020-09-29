@@ -17,8 +17,5 @@ library(knitr)
 library(rmarkdown)
 library(kableExtra)
 
-## Others
-# library(visNetwork)
-
-## Notes
-# - library() vs. require() 
+## Vis & Graphics
+library(visNetwork)

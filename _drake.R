@@ -2,20 +2,8 @@
 lapply(list.files("./R", full.names = TRUE), source)
 
 
-
-
-# HCP Settings
-options(
-  clustermq.scheduler = "sge",
-  clustermq.template = "sge_clustermq.tmpl"
-)
-
 ## Minimal Config
-drake_config(plan,
-             jobs = 4,
-             parallelism = "clustermq",
-             console_log_file = "drake.log",
-             )
+drake_config(plan)
 
 
 ## Full Config
@@ -39,17 +27,3 @@ drake_config(plan,
 #   format = NULL,
 #   lock_cache = TRUE,          # However, if you interrupt make() before it can clean itself up, then the cache will stay locked, and you will need to manually unlock it with drake::drake_cache("xyz")$unlock()
 # )
-
-
-
-# vis_drake_graph(plan)
-
-## Create Workflow Graph and move files to /docs
-## vis_drake_graph(plan, file = file_out("/docs/graph.html"))
-# -> Error in setwd(dir) : cannot change working directory
-# Write file_out in plan directly??
-
-
-# fs::file_move("graph.html", "docs/graph.html")
-# fs::dir_delete("docs/graph_files")
-# fs::file_move("graph_files", "docs/graph_files")
