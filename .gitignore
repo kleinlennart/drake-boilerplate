@@ -14,3 +14,4 @@ data/*
 
 
 ## Mac related
+*.DS_Store

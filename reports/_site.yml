@@ -4,8 +4,6 @@ name: "twitter-edu"
 lib_dir: "../docs/site_libs" # where to save libs
 output_dir: "../docs"
 
-# "`r drake::file_out('../docs')`"
-
 ## What export to /docs
 # include: ["assets/"]
 # exclude: ["docs.txt", "*.csv"]
@@ -45,8 +43,13 @@ navbar:
       
 output:
   html_document:
+    # self_contained: false
+    # lib_dir: "docs/page_libs"
+    
     # theme: "cosmo"
     highlight: "tango"
+    # df_print: "kable"
+    
     css: "assets/style.css"
     include:
       in_header: "assets/header.html"
