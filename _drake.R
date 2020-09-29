@@ -5,17 +5,8 @@ lapply(list.files("./R", full.names = TRUE), source)
 
 
 # HCP Settings
-options(
-  clustermq.scheduler = "sge",
-  clustermq.template = "sge_clustermq.tmpl"
-)
-
-## Minimal Config
-drake_config(plan,
-             jobs = 4,
-             parallelism = "clustermq",
-             console_log_file = "drake.log",
-             )
+# options(clustermq.scheduler = "multicore")
+# drake_config(plan, parallelism = "clustermq", jobs = 2)
 
 
 ## Full Config

@@ -9,7 +9,7 @@ plan <- drake_plan(
       knitr_in(rmd_files),
       # output_yaml = "reports/_site.yml",
       # output_options = NULL,
-      output_dir = file_out("docs_pages/"),
+      output_dir = file_out("docs/"),
       quiet = TRUE
     ),
     transform = map(rmd_files = !!pages_paths)
