@@ -16,6 +16,7 @@ library(lubridate)
 library(knitr)
 library(rmarkdown)
 library(kableExtra)
+library(digest) # Hashes for trigger
 
 ## Vis & Graphics
 library(visNetwork)
